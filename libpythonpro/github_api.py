@@ -10,7 +10,7 @@ def buscar_avatar(usuario):
     """
     url = f'https://api.github.com/users/{usuario}'
     resposta = requests.get(url)
-    return resposta.json()['avatar_url']
+    return print('A url do seu avatar é:', resposta.json()['avatar_url'])
 
 
 if __name__ == '__main__':
