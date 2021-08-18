@@ -9,9 +9,10 @@ def buscar_avatar(usuario):
     :return: str com o link do avatar
     """
     url = f'https://api.github.com/users/{usuario}'
-    resp = requests.get(url)
-    return resp.json()['avatar_url']
+    resposta = requests.get(url)
+    return resposta.json()['avatar_url']
 
 
 if __name__ == '__main__':
-    print(buscar_avatar('ggoldani'))
+    usuario = input('Insira o nome do seu usuário no GitHub: ')
+    print('A url do seu avatar é:', buscar_avatar(usuario))
