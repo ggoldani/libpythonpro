@@ -7,6 +7,7 @@ Nesse curso é ensinado como contribuir com projetos de código aberto
 Link para o curso [Python Pro](https://www.python.pro.br/)
 
 [![Build Status](https://travis-ci.com/ggoldani/libpythonpro.svg?branch=master)](https://travis-ci.com/ggoldani/libpythonpro)
+[![codecov](https://codecov.io/gh/ggoldani/libpythonpro/branch/master/graph/badge.svg?token=EECPMJ5X83)](https://codecov.io/gh/ggoldani/libpythonpro)
 
 Suportada versão 3 de Python
 

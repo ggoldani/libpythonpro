@@ -13,4 +13,7 @@ attrs>=19.2.0
 pytest==6.2.4
 toml==0.10.2
 
+# Coverage
+coverage==5.5
+pytest-cov==2.12.1
 -r requirements.txt
