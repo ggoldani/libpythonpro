@@ -1,4 +1,4 @@
-from libpythonpro.spam.modelos import Usuario
+from libpythonprogoldani.spam.modelos import Usuario
 
 
 def test_salvar_usuario(sessao):

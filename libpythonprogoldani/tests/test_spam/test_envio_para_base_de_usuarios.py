@@ -2,8 +2,8 @@ from unittest.mock import Mock
 
 import pytest
 
-from libpythonpro.spam.main import EnviadorDeSpam
-from libpythonpro.spam.modelos import Usuario
+from libpythonprogoldani.spam.main import EnviadorDeSpam
+from libpythonprogoldani.spam.modelos import Usuario
 
 
 @pytest.mark.parametrize(
