@@ -3,6 +3,7 @@ flake8==3.9.2
 mccabe==0.6.1
 pycodestyle==2.7.0
 pyflakes==2.3.1
+pytest-mock==3.6.1
 
 # Deps do PyTest
 attrs==21.2.0

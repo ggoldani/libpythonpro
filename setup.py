@@ -15,7 +15,13 @@ def read(fname):
 # of replicating them:
 standard_exclude = ["*.py", "*.pyc", "*$py.class", "*~", ".*", "*.bak"]
 standard_exclude_directories = [
-    ".*", "CVS", "_darcs", "./build", "./dist", "EGG-INFO", "*.egg-info"
+    ".*",
+    "CVS",
+    "_darcs",
+    "./build",
+    "./dist",
+    "EGG-INFO",
+    "*.egg-info",
 ]
 
 
@@ -25,12 +31,13 @@ standard_exclude_directories = [
 # you can't import this from another package, when you don't know if
 # that package is installed yet.
 def find_package_data(
-        where=".",
-        package="",
-        exclude=standard_exclude,
-        exclude_directories=standard_exclude_directories,
-        only_in_packages=True,
-        show_ignored=False):
+    where=".",
+    package="",
+    exclude=standard_exclude,
+    exclude_directories=standard_exclude_directories,
+    only_in_packages=True,
+    show_ignored=False,
+):
     """
     Return a dictionary suitable for use in ``package_data``
     in a distutils ``setup.py`` file.
@@ -59,18 +66,17 @@ def find_package_data(
             if os.path.isdir(fn):
                 bad_name = False
                 for pattern in exclude_directories:
-                    if (fnmatchcase(name, pattern)
-                            or fn.lower() == pattern.lower()):
+                    if fnmatchcase(name, pattern) or fn.lower() == pattern.lower():
                         bad_name = True
                         if show_ignored:
-                            print >> sys.stderr, (
-                                    "Directory %s ignored by pattern %s"
-                                    % (fn, pattern))
-                        break
+                            print(
+                                sys.stderr,
+                                ("Directory %s ignored by pattern %s" % (fn, pattern)),
+                            )
+                            break
                 if bad_name:
                     continue
-                if (os.path.isfile(os.path.join(fn, "__init__.py"))
-                        and not prefix):
+                if os.path.isfile(os.path.join(fn, "__init__.py")) and not prefix:
                     if not package:
                         new_package = name
                     else:
@@ -82,13 +88,13 @@ def find_package_data(
                 # is a file
                 bad_name = False
                 for pattern in exclude:
-                    if (fnmatchcase(name, pattern)
-                            or fn.lower() == pattern.lower()):
+                    if fnmatchcase(name, pattern) or fn.lower() == pattern.lower():
                         bad_name = True
                         if show_ignored:
-                            print >> sys.stderr, (
-                                    "File %s ignored by pattern %s"
-                                    % (fn, pattern))
+                            print(
+                                sys.stderr,
+                                ("File %s ignored by pattern %s" % (fn, pattern)),
+                            )
                         break
                 if bad_name:
                     continue
@@ -108,11 +114,11 @@ setup(
     name=NAME,
     version=VERSION,
     description=DESCRIPTION,
-    long_description=read('README.md'),
+    long_description=read("README.md"),
     long_description_content_type="text/markdown",
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
-    license=read('LICENSE'),
+    license="GNU AFFERO GENERAL PUBLIC LICENSE",
     url=URL,
     packages=find_packages(exclude=["tests.*", "tests"]),
     package_data=find_package_data(PACKAGE, only_in_packages=False),
@@ -125,8 +131,6 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Framework :: Pytest",
     ],
-    install_requires=[
-        'requests'
-    ],
+    install_requires=["requests"],
     zip_safe=False,
 )

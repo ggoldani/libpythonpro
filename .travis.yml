@@ -7,4 +7,4 @@ script:
   - flake8
   - pytest libpythonprogoldani --cov=libpythonprogoldani
 after_success:
-  - codecov CODECOV_TOKEN='2f263c5c-71a7-4082-8df8-934eceaae287'
+  - codecov
