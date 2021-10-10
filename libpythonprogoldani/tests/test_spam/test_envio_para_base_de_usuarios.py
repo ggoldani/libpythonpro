@@ -2,7 +2,6 @@ from unittest.mock import Mock
 
 import pytest as pytest
 
-from libpythonprogoldani.spam.enviador_de_email import Enviador
 from libpythonprogoldani.spam.main import EnviadorDeSpam
 from libpythonprogoldani.spam.modelos import Usuario
 
