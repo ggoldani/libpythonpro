@@ -1,7 +1,5 @@
 from unittest.mock import Mock
-
 import pytest as pytest
-
 from libpythonprogoldani import github_api
 
 

@@ -29,7 +29,7 @@ def test_qnt_de_spam(sessao, usuarios):
         'Assunto',
         'Conteudo'
     )
-    assert len(usuarios) == enviador.enviar.call_count # metodo do mock que conta qnts vezes o metodo foi chamado
+    assert len(usuarios) == enviador.enviar.call_count  # metodo do mock que conta qnts vezes o metodo foi chamado
 
 
 def test_parametros_de_spam(sessao):
