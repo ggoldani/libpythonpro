@@ -2,7 +2,7 @@ language: python
 python:
   - 3.9
 install:
-  - pip install -q -r requirements-dev.txt codecov
+  - pip install -q pipenv codecov
 script:
   - flake8
   - pytest libpythonprogoldani --cov=libpythonprogoldani
